@@ -14,4 +14,5 @@ fi
 
 
 # 启动python web容器gunicorn
-gunicorn -w 1 -b 0.0.0.0:5000 -t 120 --threads 2 flask_demo:app >> log 1>&1 2>&1  &
+# /usr/local/python3/bin/gunicorn -w 1 -b 0.0.0.0:5000 -t 120 --threads 2 demo:app >> log 1>&1 2>&1  &
+/usr/local/python3/bin/gunicorn demo:app -c gunicorn.conf.py  >> log 1>&1 2>&1  &
